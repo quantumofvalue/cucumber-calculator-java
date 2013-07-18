@@ -20,3 +20,13 @@ Scenario Outline: Adding integer numbers
 	| 4			| 5			| 9		|
 	| 7			| 8			| 15	|
 
+Scenario: Adding numbers using a table
+	Given the following argument pairs:
+	| argument1	| argument2	|
+	| 4			| 5			|
+	| 7			| 8			|
+	When I add first and second argument
+	Then I should get the following list of results:
+	| sum	|
+	| 9		|
+	| 15	|
