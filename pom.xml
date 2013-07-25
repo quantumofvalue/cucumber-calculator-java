@@ -18,7 +18,20 @@
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 		<spring.framework.version>3.1.4.RELEASE</spring.framework.version>
 		<cucumber.version>1.1.3</cucumber.version>
-	</properties>	<dependencies>
+	</properties>
+	<repositories>
+    	<repository>
+      		<id>uk</id>
+      		<name>Mirror for the Europe</name>
+      		<url>http://uk.maven.org/maven2/</url>
+    	</repository>
+    	<repository>
+      		<id>central</id>
+      		<name>Central</name>
+      		<url>http://repo.maven.apache.org/maven2/</url>
+    	</repository>
+  </repositories>
+	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -74,6 +87,21 @@
 			<artifactId>cucumber-spring</artifactId>
 			<version>${cucumber.version}</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- Selenium dependencies -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.33.0</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- Google Java Libraries -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>14.0.1</version>
 		</dependency>
 		    
 	</dependencies>
