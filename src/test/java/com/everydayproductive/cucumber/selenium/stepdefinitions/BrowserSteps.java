@@ -36,8 +36,10 @@ public class BrowserSteps {
 	}
 
 	@When("^I click the link \"([^\"]*)\"$")
-	public void I_click_the_link(String arg1) throws Throwable {
-	    driver.findElement(By.xpath("//*[@id='billboard']/div/div[3]/h2/a")).click();
+	public void I_click_the_link(String href) throws Throwable {
+	    //driver.findElement(By.xpath("//*[@id='billboard']/div/div[3]/h2/a")).click();
+		driver.findElement(By.xpath(String.format("//a[@href='%s']", href))).click();
+		//driver.findElement(By.linkText("iOS 7. The mobile OS from a whole new perspective.")).click();		
 	}
 
 	@Then("^I should see the iOS(\\d+) web page$")
